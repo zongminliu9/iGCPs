@@ -1,15 +1,16 @@
 # iGCPs
 We introduce an generalized neurocytoskeletal-PDEs (iGCPs) model, incorporating regulatory protein interaction networks for quantitative spatiotemporal simulations in Neurocytoskeleton Dynamics..
 
-2D_to_initialswc.py is used for 生成关键节点的轴突空间参数 for construction of 3D neurocytoskeleton 空间
+2D_to_initialswc.py is used for 用于执行处理二维分割结果，生成关键节点的轴突空间参数 for construction of 3D neurocytoskeleton 空间
 NeurocytoManifold.m用于将离散化的空间参数整合为空间manifold。
-generate_mesh.m用于生成MeshStructure.vtk和velocity_field.txt
+generate_mesh.m用于生成MeshStructure.vtk的3d空间文件和用于执行generalized neurocytoskeleton-PDEs求解的初始velocity_field.txt
 
 make thbspline.mk来生成可执行文件thespline，b样条
-使用metis来划分网格，用来并行计算，减少计算时间
-make velocity.mk来生成稳态速度场和压力场
-make convectiondiff.mk来生成浓度场
+使用metis来划分网格，生成可用来执行并行计算的分割文件，以减少运算时间
+make velocity.mk来生成稳态速度场和压力场的可执行文件
+make convectiondiff.mk来生成浓度场的可执行文件
 
+Parameters utilized in iGCPs.
 B 1 BPAG1 density
 N 250 NF-L density
 rho 100 Microtubule density
